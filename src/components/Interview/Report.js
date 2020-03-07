@@ -21,23 +21,23 @@ function Report(props) {
   const totalQuestionsAsked = correct + wrong + normal;
   const reportGraph = [
     {
-      name: "Brands",
+      name: "Answers",
       colorByPoint: true,
       innerSize: "40%",
       data: [
         {
           color: "#64a169",
-          name: "Correct Answers",
+          name: "Correct",
           y: correct
         },
         {
           color: "#e3595f",
-          name: "Wrong Answers",
+          name: "Wrong",
           y: wrong
         },
         {
           color: "#c8c97f",
-          name: "Average Answers",
+          name: "Average",
           y: normal
         }
       ]
@@ -52,7 +52,7 @@ function Report(props) {
       type: "pie"
     },
     title: {
-      text: "Browser market shares in January, 2018",
+      text: "Pie chart for answers",
       text: null
     },
     tooltip: {
