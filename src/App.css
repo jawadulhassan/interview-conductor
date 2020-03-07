@@ -69,6 +69,7 @@
   border-bottom-right-radius: 5px;
 }
 .submission-wrapper {
+  cursor: pointer;
   background: #5190f5;
   padding: 20px 40px;
   position: fixed;
@@ -133,7 +134,23 @@
 .white-colored {
   color: white;
 }
-.report-wrapper{
-  width: 70%; 
+.report-wrapper {
   text-align: center;
+}
+.interview-info-wrapper {
+  margin: 80px;
+}
+.interview-info-wrapper table,
+th,
+td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th,
+td {
+  padding: 10px;
+  text-align: left;
+}
+.note {
+  color: #6c757d !important;
 }

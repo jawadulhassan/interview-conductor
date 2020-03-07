@@ -5,7 +5,7 @@ import { withRouter } from "react-router-dom";
 function Info(props) {
   const { handleSubmit, register, errors } = useForm();
   const onSubmit = values => {
-    console.log(values);
+    window.localStorage.setItem('interviewee-info', JSON.stringify(values));
     props.history.push("/interview");
   };
 
@@ -13,9 +13,9 @@ function Info(props) {
     <div className="info-box">
       <form onSubmit={handleSubmit(onSubmit)}>
         <input
-          className={`${errors.username && "error"}`}
+          className={`${errors.name && "error"}`}
           placeholder="Name of Interviewee"
-          name="username"
+          name="name"
           ref={register({
             required: "Required"
           })}

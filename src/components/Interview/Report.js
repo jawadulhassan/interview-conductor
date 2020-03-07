@@ -9,7 +9,7 @@ if (typeof Highcharts === "object") {
 }
 
 function Report(props) {
-  const { reportMarks } = props;
+  const { reportMarks, timer } = props;
   if (!reportMarks) return null;
 
   const {
@@ -18,6 +18,7 @@ function Report(props) {
     averageAnswers: normal
   } = reportMarks;
 
+  const totalQuestionsAsked = correct + wrong + normal;
   const reportGraph = [
     {
       name: "Brands",
@@ -77,10 +78,37 @@ function Report(props) {
     series: reportGraph
   };
 
+  var getIntervieweeInfo = window.localStorage.getItem("interviewee-info");
+  const { name, position, date } = JSON.parse(getIntervieweeInfo);
+
   return (
     <div className="report-wrapper">
       <h1>Final Report</h1>
+      <div className="interview-info-wrapper">
+        <table style={{ width: "100%" }}>
+          <tbody>
+            <tr>
+              <th>Name</th>
+              <th>Date</th>
+              <th>Postion</th>
+              <th>Time Taken (Minutes)</th>
+              <th>Total Questions</th>
+            </tr>
+            <tr>
+              <td>{name}</td>
+              <td>{date}</td>
+              <td>{position}</td>
+              <td>{timer}</td>
+              <td>{totalQuestionsAsked}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
       <HighchartsReact highcharts={Highcharts} options={chartOptions} />
+      <div className="note">
+        <p><strong> *Note: </strong> Go to the Browser menu to take the printout of the report.</p>
+      </div>
     </div>
   );
 }

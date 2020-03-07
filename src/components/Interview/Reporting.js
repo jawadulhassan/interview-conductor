@@ -24,7 +24,9 @@ function reducer(state, actions) {
 }
 
 function Reporting() {
+  let [timer, setTimer] = useState(0);
   const [interviewEnded, setInterviewEnded] = useState(false);
+
   const [state, dispatch] = useReducer(reducer, initialState);
 
   useEffect(() => {
@@ -50,11 +52,11 @@ function Reporting() {
     <Fragment>
       {!interviewEnded ? (
         <Fragment>
-          <Timer {...{ setInterviewEnded }} />
+          <Timer {...{ setInterviewEnded, timer, setTimer }} />
           <OptionsWidget />
         </Fragment>
       ) : (
-        <Report reportMarks={state} />
+        <Report reportMarks={state} {...{ timer }} />
       )}
     </Fragment>
   );

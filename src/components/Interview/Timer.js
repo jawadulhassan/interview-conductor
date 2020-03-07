@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 
 function TimerWidget(props) {
-  const { setInterviewEnded } = props;
-  let [timer, setTimer] = useState(0);
+  const { setInterviewEnded, timer, setTimer } = props;
 
   setTimeout(function() {
     setTimer(timer + 1);
