@@ -83,7 +83,7 @@ function Report(props) {
 
   return (
     <div className="report-wrapper">
-      <h1>Final Report</h1>
+      <h1 style={{color: 'white'}}>Final Report</h1>
       <div className="interview-info-wrapper">
         <table style={{ width: "100%" }}>
           <tbody>

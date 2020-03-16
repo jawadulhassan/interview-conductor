@@ -1,3 +1,7 @@
+body, html { 
+  overflow-x: hidden; 
+  overflow-y: hidden;
+}
 .main-wrapper {
   display: flex;
   flex: 1;
@@ -10,14 +14,10 @@
   width: 30%;
   height: 350px;
   background: #5fcfa1;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-right: -50%;
-  transform: translate(-50%, -50%);
   border-radius: 1rem;
   justify-content: center;
   text-align: center;
+  margin-top: 10%;
   padding-top: 25px;
 }
 .info-box input {
@@ -74,7 +74,7 @@
   padding: 20px 40px;
   position: fixed;
   z-index: 20;
-  bottom: 0;
+  bottom: 40px;
   color: #ffffff;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
@@ -138,19 +138,47 @@
   text-align: center;
 }
 .interview-info-wrapper {
-  margin: 80px;
+  margin: 50px;
 }
 .interview-info-wrapper table,
 th,
 td {
-  border: 1px solid black;
+  border: 1px solid white;
   border-collapse: collapse;
+  color: white;
 }
 th,
 td {
   padding: 10px;
   text-align: left;
 }
+.page-wrapper{
+  padding-bottom: 65%;
+  display: flex;
+  flex: 1 1;
+  justify-content: center;
+  align-items: center;
+  background-color: #141d28;
+}
 .note {
   color: #6c757d !important;
+}
+.ds.ms {
+  background-color: #233142;
+}
+.page_copyright {
+  font-size: 12px;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  line-height: 1;
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  padding: 15px;
+  text-align: center;
+}
+.ds {
+  background-color: #141d28;
+  color: #fff;
 }
