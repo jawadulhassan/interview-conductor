@@ -1,12 +1,22 @@
 import React from "react";
 import HighchartsReact from "highcharts-react-official";
 import Highcharts from "highcharts/highcharts.src.js";
-
 import HighchartsExporting from "highcharts/modules/exporting";
+import darkUnica from "highcharts/themes/dark-unica";
+
+darkUnica(Highcharts);
 
 if (typeof Highcharts === "object") {
   HighchartsExporting(Highcharts);
 }
+
+var theme = {
+  chart: {
+    backgroundColor: "#141d28"
+  }
+};
+
+Highcharts.setOptions(theme);
 
 function Report(props) {
   const { reportMarks, timer } = props;
@@ -83,7 +93,7 @@ function Report(props) {
 
   return (
     <div className="report-wrapper">
-      <h1 style={{color: 'white'}}>Final Report</h1>
+      <h1 style={{ color: "white" }}>Final Report</h1>
       <div className="interview-info-wrapper">
         <table style={{ width: "100%" }}>
           <tbody>
@@ -107,7 +117,10 @@ function Report(props) {
 
       <HighchartsReact highcharts={Highcharts} options={chartOptions} />
       <div className="note">
-        <p><strong> *Note: </strong> Go to the Browser menu to take the printout of the report.</p>
+        <p>
+          <strong> *Note: </strong> Go to the Browser menu to take the printout
+          of the report.
+        </p>
       </div>
     </div>
   );
