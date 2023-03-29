@@ -7,7 +7,7 @@ import Timer from "./Timer";
 const initialState = {
   rightAnswers: 0,
   wrongAnswers: 0,
-  averageAnswers: 0
+  averageAnswers: 0,
 };
 
 function reducer(state, actions) {
@@ -30,9 +30,9 @@ function Reporting() {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   useEffect(() => {
-    window.addEventListener("keydown", event => keyFunc(event));
+    window.addEventListener("keydown", (event) => keyFunc(event));
     return () => {
-      window.removeEventListener("keydown", event => keyFunc(event));
+      window.removeEventListener("keydown", (event) => keyFunc(event));
     };
   }, []);
 

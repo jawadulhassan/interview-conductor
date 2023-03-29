@@ -14,7 +14,7 @@ ReactDOM.render(
       <div className="container">
         <div className="row align-items-center">
           <div className="col-sm-12 text-center">
-            All Rights Reserved © 2020 Jawad Ul Hassan
+            All Rights Reserved © {(new Date().getFullYear())} Jawad Ul Hassan
           </div>
         </div>
       </div>

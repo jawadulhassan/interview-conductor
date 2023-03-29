@@ -63,7 +63,6 @@ function Report(props) {
     },
     title: {
       text: "Pie chart for answers",
-      text: null
     },
     tooltip: {
       pointFormat: "{series.name}: <b>{point.percentage:.1f}%</b>"

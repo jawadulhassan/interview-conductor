@@ -4,8 +4,8 @@ import { withRouter } from "react-router-dom";
 
 function Info(props) {
   const { handleSubmit, register, errors } = useForm();
-  const onSubmit = values => {
-    window.localStorage.setItem('interviewee-info', JSON.stringify(values));
+  const onSubmit = (values) => {
+    window.localStorage.setItem("interviewee-info", JSON.stringify(values));
     props.history.push("/interview");
   };
 
@@ -17,7 +17,7 @@ function Info(props) {
           placeholder="Name of Interviewee"
           name="name"
           ref={register({
-            required: "Required"
+            required: "Required",
           })}
         />
         <input
@@ -25,14 +25,14 @@ function Info(props) {
           placeholder="Position"
           name="position"
           ref={register({
-            required: "Required"
+            required: "Required",
           })}
         />
         <input
           type="date"
           name="date"
           ref={register({
-            required: "Required"
+            required: "Required",
           })}
         />
         <button type="submit">Let's Begin</button>
