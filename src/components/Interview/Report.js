@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import HighchartsReact from "highcharts-react-official";
 import Highcharts from "highcharts/highcharts.src.js";
 import HighchartsExporting from "highcharts/modules/exporting";
@@ -12,8 +13,8 @@ if (typeof Highcharts === "object") {
 
 var theme = {
   chart: {
-    backgroundColor: "#141d28"
-  }
+    backgroundColor: "#141d28",
+  },
 };
 
 Highcharts.setOptions(theme);
@@ -25,7 +26,7 @@ function Report(props) {
   const {
     rightAnswers: correct,
     wrongAnswers: wrong,
-    averageAnswers: normal
+    averageAnswers: normal,
   } = reportMarks;
 
   const totalQuestionsAsked = correct + wrong + normal;
@@ -38,20 +39,20 @@ function Report(props) {
         {
           color: "#64a169",
           name: "Correct",
-          y: correct
+          y: correct,
         },
         {
           color: "#e3595f",
           name: "Wrong",
-          y: wrong
+          y: wrong,
         },
         {
           color: "#c8c97f",
           name: "Average",
-          y: normal
-        }
-      ]
-    }
+          y: normal,
+        },
+      ],
+    },
   ];
 
   const chartOptions = {
@@ -59,13 +60,13 @@ function Report(props) {
       plotBackgroundColor: null,
       plotBorderWidth: null,
       plotShadow: false,
-      type: "pie"
+      type: "pie",
     },
     title: {
       text: "Pie chart for answers",
     },
     tooltip: {
-      pointFormat: "{series.name}: <b>{point.percentage:.1f}%</b>"
+      pointFormat: "{series.name}: <b>{point.percentage:.1f}%</b>",
     },
     plotOptions: {
       pie: {
@@ -78,13 +79,13 @@ function Report(props) {
           style: {
             textShadow: false,
             color: "#212833",
-            textOutline: false
-          }
+            textOutline: false,
+          },
         },
-        showInLegend: true
-      }
+        showInLegend: true,
+      },
     },
-    series: reportGraph
+    series: reportGraph,
   };
 
   var getIntervieweeInfo = window.localStorage.getItem("interviewee-info");
@@ -113,8 +114,12 @@ function Report(props) {
           </tbody>
         </table>
       </div>
-
       <HighchartsReact highcharts={Highcharts} options={chartOptions} />
+      <button>Print</button>
+      &nbsp;
+      <Link to="/">
+        <button>Another Interviewee</button>
+      </Link>
       <div className="note">
         <p>
           <strong> *Note: </strong> Go to the Browser menu to take the printout

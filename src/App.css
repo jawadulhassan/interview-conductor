@@ -1,7 +1,7 @@
 body,
-html {
-  overflow-x: hidden;
-  overflow-y: hidden;
+html,
+button {
+  cursor: pointer;
 }
 .main-wrapper {
   display: flex;
@@ -9,10 +9,11 @@ html {
   justify-content: center;
   align-items: center;
   align-content: center;
+  background-color: #141d28;
 }
 .info-box {
   flex-direction: column;
-  width: 30%;
+  width: 40%;
   height: 350px;
   background: #5fcfa1;
   border-radius: 1rem;
@@ -62,10 +63,11 @@ html {
 .timer-wrapper {
   background: #f57d83;
   padding: 20px;
-  position: fixed;
   z-index: 20;
   top: 0;
   color: #ffffff;
+  font-size: 20px;
+  font-weight: 600;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
 }
@@ -74,9 +76,10 @@ html {
   background: #5190f5;
   padding: 20px 40px;
   position: fixed;
-  z-index: 20;
   bottom: 40px;
   color: #ffffff;
+  font-size: 20px;
+  font-weight: 600;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
 }
@@ -137,6 +140,7 @@ html {
 }
 .report-wrapper {
   text-align: center;
+  overflow: auto;
 }
 .interview-info-wrapper {
   margin: 50px;
@@ -182,4 +186,8 @@ td {
 .ds {
   background-color: #141d28;
   color: #fff;
+}
+.buttons {
+  margin-top: 20px;
+  margin-bottom: 20px;
 }

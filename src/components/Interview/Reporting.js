@@ -49,7 +49,7 @@ function Reporting() {
   }
 
   return (
-    <Fragment>
+    <div>
       {!interviewEnded ? (
         <Fragment>
           <Timer {...{ setInterviewEnded, timer, setTimer }} />
@@ -58,7 +58,7 @@ function Reporting() {
       ) : (
         <Report reportMarks={state} {...{ timer }} />
       )}
-    </Fragment>
+    </div>
   );
 }
 

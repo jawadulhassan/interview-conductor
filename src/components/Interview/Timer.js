@@ -3,12 +3,12 @@ import React from "react";
 function TimerWidget(props) {
   const { setInterviewEnded, timer, setTimer } = props;
 
-  setTimeout(function() {
+  setTimeout(function () {
     setTimer(timer + 1);
   }, 60000);
 
   return (
-    <>
+    <div style={{ width: "100%" }}>
       <div className="timer-wrapper">{`Timer (minutes): ${timer}`}</div>
       <div
         className="submission-wrapper"
@@ -16,7 +16,7 @@ function TimerWidget(props) {
       >
         Wrap up!
       </div>
-    </>
+    </div>
   );
 }
 
