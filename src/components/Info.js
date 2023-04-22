@@ -1,12 +1,11 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import { withRouter } from "react-router-dom";
 
 function Info(props) {
   const { handleSubmit, register, errors } = useForm();
   const onSubmit = (values) => {
     window.localStorage.setItem("interviewee-info", JSON.stringify(values));
-    props.history.push("/interview");
+    props.setSelectedTab("interview");
   };
 
   return (
@@ -41,4 +40,4 @@ function Info(props) {
   );
 }
 
-export default withRouter(Info);
+export default Info;

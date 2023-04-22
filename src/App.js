@@ -1,17 +1,27 @@
-import React from "react";
-import { HashRouter as Router, Route, Switch } from "react-router-dom";
+import React, { useState } from "react";
 
 import Info from "./components/Info";
+import Report from "./components/Report";
 import Interview from "./components/Interview";
 
+// TODO:
+function TabBodyContent({ selectedTab, setSelectedTab }) {
+  switch (selectedTab) {
+    case "info":
+      return <Info setSelectedTab={setSelectedTab} />;
+    case "interview":
+      return <Interview setSelectedTab={setSelectedTab} />;
+    case "report":
+      return <Report setSelectedTab={setSelectedTab} />;
+    default:
+      return <Info />;
+  }
+}
+
 function App() {
+  const [selectedTab, setSelectedTab] = useState("info");
   return (
-    <Router>
-      <Switch>
-        <Route path="/interview" component={Interview} />
-        <Route path="/" component={Info} />
-      </Switch>
-    </Router>
+    <TabBodyContent selectedTab={selectedTab} setSelectedTab={setSelectedTab} />
   );
 }
 

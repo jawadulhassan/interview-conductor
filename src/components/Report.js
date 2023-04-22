@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+
 import HighchartsReact from "highcharts-react-official";
 import Highcharts from "highcharts/highcharts.src.js";
 import HighchartsExporting from "highcharts/modules/exporting";
@@ -91,6 +91,10 @@ function Report(props) {
   var getIntervieweeInfo = window.localStorage.getItem("interviewee-info");
   const { name, position, date } = JSON.parse(getIntervieweeInfo);
 
+  const onSubmit = () => {
+    props.setSelectedTab("info");
+  };
+
   return (
     <div className="report-wrapper">
       <h1 style={{ color: "white" }}>Final Report</h1>
@@ -117,9 +121,7 @@ function Report(props) {
       <HighchartsReact highcharts={Highcharts} options={chartOptions} />
       <button>Print</button>
       &nbsp;
-      <Link to="/">
-        <button>Another Interviewee</button>
-      </Link>
+      <button onClick={onSubmit}>Another Interviewee</button>
       <div className="note">
         <p>
           <strong> *Note: </strong> Go to the Browser menu to take the printout
