@@ -4,7 +4,6 @@ import Info from "./components/Info";
 import Report from "./components/Report";
 import Interview from "./components/Interview";
 
-// TODO:
 function TabBodyContent({ selectedTab, setSelectedTab }) {
   switch (selectedTab) {
     case "info":
