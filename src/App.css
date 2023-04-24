@@ -1,83 +1,81 @@
 body,
 html,
-button {
-  cursor: pointer;
-}
 .main-wrapper {
   display: flex;
   flex: 1;
   justify-content: center;
   align-items: center;
   align-content: center;
-  background-color: #141d28;
 }
 .info-box {
+  display: flex;
   flex-direction: column;
-  width: 40%;
-  height: 350px;
-  background: #5fcfa1;
+  width: 400px;
+  background: #e8f1f9;
   border-radius: 1rem;
   justify-content: center;
-  text-align: center;
   margin-top: 10%;
-  padding-top: 25px;
+  padding: 25px;
 }
 .info-box input {
-  padding: 15px;
+  background: #ffffff;
   border-radius: 5px;
-  width: 60%;
-  margin-top: 20px;
   border: none;
   font-size: 15px;
 }
-.info-box input .error {
-  padding: 15px;
-  border-radius: 5px;
-  width: 60%;
-  margin-top: 20px;
-  border: none;
-  font-size: 15px;
-  border-color: red;
-  border-width: 1px;
+.info-box input::after {
+  background: #ffffff !important;
 }
+.info-box .first-input {
+  margin-top: 25px;
+  padding: 12px;
+}
+.ant-select-selector {
+  border-radius: 6px !important;
+  border: 0px !important;
+  height: 45px !important;
+}
+
+.ant-picker {
+  width: 100%;
+  border-radius: 6px !important;
+  border: 0px !important;
+  height: 45px !important;
+}
+
 .info-box button {
-  width: 40%;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  width: 100%;
+  height: 50px;
   margin-top: 40px;
-  font-size: 20px;
-  background-color: #fcc46a;
   color: #ffffff;
   border: none;
-  padding: 15px;
-  border-radius: 5px;
-}
-.info-box button:hover {
-  width: 40%;
-  margin-top: 40px;
-  font-size: 20px;
-  background-color: #f79a05;
-  color: #ffffff;
-  border: none;
-  padding: 15px;
   border-radius: 5px;
 }
 .timer-wrapper {
-  background: #f57d83;
-  padding: 20px;
+  font-family: "Open Sans";
+  background: #fff6e7;
+  padding: 20px 60px;
   z-index: 20;
   top: 0;
-  color: #ffffff;
+  color: #fa8c16;
   font-size: 20px;
   font-weight: 600;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
 }
 .submission-wrapper {
+  font-family: "Open Sans";
   cursor: pointer;
-  background: #5190f5;
-  padding: 20px 40px;
+  background: #f0fcf5;
+  padding: 20px 60px;
   position: fixed;
-  bottom: 40px;
-  color: #ffffff;
+  bottom: 38px;
+  color: #469975;
   font-size: 20px;
   font-weight: 600;
   border-top-left-radius: 5px;
@@ -103,9 +101,9 @@ button {
   height: 150px;
 }
 .right-answers {
-  height: 300px;
-  width: 300px;
-  background: #64a169;
+  height: 280px;
+  width: 280px;
+  background: #d9d9d9;
   border-radius: 10px;
   justify-content: center;
   align-items: center;
@@ -114,9 +112,9 @@ button {
   flex-direction: column;
 }
 .wrong-answers {
-  height: 300px;
-  width: 300px;
-  background: #e3595f;
+  height: 280px;
+  width: 280px;
+  background: #d9d9d9;
   border-radius: 10px;
   justify-content: center;
   align-items: center;
@@ -125,9 +123,9 @@ button {
   flex-direction: column;
 }
 .average-answers {
-  background: #c8c97f;
-  height: 300px;
-  width: 300px;
+  background: #d9d9d9;
+  height: 280px;
+  width: 280px;
   border-radius: 10px;
   justify-content: center;
   align-items: center;
@@ -137,10 +135,12 @@ button {
 }
 .white-colored {
   color: white;
+  margin-top: 12px;
 }
 .report-wrapper {
   text-align: center;
   overflow: auto;
+  background-color: black;
 }
 .interview-info-wrapper {
   margin: 50px;
@@ -158,18 +158,14 @@ td {
   text-align: left;
 }
 .page-wrapper {
-  padding-bottom: 65%;
+  flex: 1;
   display: flex;
-  flex: 1 1;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #141d28;
 }
 .note {
   color: #6c757d !important;
-}
-.ds.ms {
-  background-color: #233142;
 }
 .page_copyright {
   font-size: 12px;
@@ -182,10 +178,14 @@ td {
   width: 100%;
   padding: 15px;
   text-align: center;
+  box-shadow: 5px -78px 84px 80px rgba(0, 0, 0, 0.1);
 }
 .ds {
-  background-color: #141d28;
-  color: #fff;
+  display: inline;
+  font-size: 14px;
+  padding-bottom: 2px;
+  color: black !important;
+  padding-bottom: 8px;
 }
 .buttons {
   margin-top: 20px;

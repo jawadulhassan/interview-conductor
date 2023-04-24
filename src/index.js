@@ -10,11 +10,11 @@ ReactDOM.render(
     <div className="page-wrapper">
       <App />
     </div>
-    <section className="page_copyright ds ms s-pt-20 s-pb-20 s-pb-20 s-pb-20 s-pb-20 s-pb-20">
+    <section className="page_copyright ds s-pt-20 s-pb-20 s-pb-20 s-pb-20 s-pb-20 s-pb-20">
       <div className="container">
         <div className="row align-items-center">
           <div className="col-sm-12 text-center">
-            All Rights Reserved © {(new Date().getFullYear())} Jawad Ul Hassan
+            All Rights Reserved © {new Date().getFullYear()} Jawad Ul Hassan
           </div>
         </div>
       </div>

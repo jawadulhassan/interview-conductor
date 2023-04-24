@@ -1,4 +1,5 @@
 import React, { useReducer, useEffect, Fragment, useState } from "react";
+import { Progress } from "antd";
 
 import Report from "./Report";
 
@@ -26,19 +27,29 @@ function Options() {
     <div className="options-wrapper">
       <div className="options">
         <div className="right-answers">
-          <img alt="right-answer" src="/100.png" />
+          <Progress type="circle" percent={100} strokeWidth={10} />
           <span className="white-colored">
             <i className="fa fa-arrow-up fa-5x" aria-hidden="true"></i>
           </span>
         </div>
         <div className="wrong-answers">
-          <img alt="right-answer" src="/0.png" />
+          <Progress
+            type="circle"
+            percent={100}
+            strokeWidth={10}
+            status="exception"
+          />
           <span className="white-colored">
             <i className="fa fa-arrow-down fa-5x" aria-hidden="true"></i>
           </span>
         </div>
         <div className="average-answers">
-          <img alt="right-answer" src="/50.png" />
+          <Progress
+            type="circle"
+            percent={50}
+            strokeColor={{ "0%": "#ff4d4f", "100%": "#87d068" }}
+            strokeWidth={10}
+          />
           <span className="white-colored">
             <i className="fa fa-arrow-right fa-5x" aria-hidden="true"></i>
           </span>
@@ -57,7 +68,7 @@ function Timer(props) {
 
   return (
     <div style={{ width: "100%" }}>
-      <div className="timer-wrapper">{`Timer (minutes): ${timer}`}</div>
+      <div className="timer-wrapper">{`Timer: ${timer} minutes`}</div>
       <div
         className="submission-wrapper"
         onClick={() => setInterviewEnded(true)}
@@ -84,6 +95,8 @@ function Interview(props) {
   }, []);
 
   function keyFunc(event) {
+    //event.preventDefault();
+    console.log("You clicked submit.", event);
     if (event.isComposing || event.keyCode === 38) {
       dispatch({ type: "UP" });
     }
