@@ -1,23 +1,13 @@
 import React from "react";
+import { Button } from "antd";
 
 import HighchartsReact from "highcharts-react-official";
 import Highcharts from "highcharts/highcharts.src.js";
 import HighchartsExporting from "highcharts/modules/exporting";
-import darkUnica from "highcharts/themes/dark-unica";
-
-darkUnica(Highcharts);
 
 if (typeof Highcharts === "object") {
   HighchartsExporting(Highcharts);
 }
-
-var theme = {
-  chart: {
-    backgroundColor: "#141d28",
-  },
-};
-
-Highcharts.setOptions(theme);
 
 function Report(props) {
   const { reportMarks, timer } = props;
@@ -78,7 +68,6 @@ function Report(props) {
           format: "<b>{point.name}</b>: {point.percentage:.1f} %",
           style: {
             textShadow: false,
-            color: "#212833",
             textOutline: false,
           },
         },
@@ -89,15 +78,18 @@ function Report(props) {
   };
 
   var getIntervieweeInfo = window.localStorage.getItem("interviewee-info");
-  const { name, position, date } = JSON.parse(getIntervieweeInfo);
+  const { username, designation, dateInfo } = JSON.parse(getIntervieweeInfo);
 
+  const print = () => {
+    window.print();
+  };
   const onSubmit = () => {
     props.setSelectedTab("info");
   };
 
   return (
     <div className="report-wrapper">
-      <h1 style={{ color: "white" }}>Final Report</h1>
+      <h1>Final Report</h1>
       <div className="interview-info-wrapper">
         <table style={{ width: "100%" }}>
           <tbody>
@@ -109,9 +101,9 @@ function Report(props) {
               <th>Total Questions</th>
             </tr>
             <tr>
-              <td>{name}</td>
-              <td>{date}</td>
-              <td>{position}</td>
+              <td>{username}</td>
+              <td>{dateInfo}</td>
+              <td>{designation}</td>
               <td>{timer}</td>
               <td>{totalQuestionsAsked}</td>
             </tr>
@@ -119,14 +111,12 @@ function Report(props) {
         </table>
       </div>
       <HighchartsReact highcharts={Highcharts} options={chartOptions} />
-      <button>Print</button>
-      &nbsp;
-      <button onClick={onSubmit}>Another Interviewee</button>
-      <div className="note">
-        <p>
-          <strong> *Note: </strong> Go to the Browser menu to take the printout
-          of the report.
-        </p>
+      <div className="buttons">
+        <Button type="dashed" onClick={print}>
+          Print
+        </Button>
+        &nbsp;
+        <Button onClick={onSubmit}>Another Interviewee</Button>
       </div>
     </div>
   );

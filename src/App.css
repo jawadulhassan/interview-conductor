@@ -14,7 +14,7 @@ html,
   background: #e8f1f9;
   border-radius: 1rem;
   justify-content: center;
-  margin-top: 10%;
+  margin-top: 20%;
   padding: 25px;
 }
 .info-box input {
@@ -71,11 +71,11 @@ html,
 .submission-wrapper {
   font-family: "Open Sans";
   cursor: pointer;
-  background: #f0fcf5;
+  background: #469975;
   padding: 20px 60px;
   position: fixed;
   bottom: 38px;
-  color: #469975;
+  color: #f0fcf5;
   font-size: 20px;
   font-weight: 600;
   border-top-left-radius: 5px;
@@ -140,7 +140,6 @@ html,
 .report-wrapper {
   text-align: center;
   overflow: auto;
-  background-color: black;
 }
 .interview-info-wrapper {
   margin: 50px;
@@ -148,9 +147,9 @@ html,
 .interview-info-wrapper table,
 th,
 td {
-  border: 1px solid white;
+  border: 1px solid black;
   border-collapse: collapse;
-  color: white;
+  color: black;
 }
 th,
 td {
@@ -163,9 +162,6 @@ td {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-.note {
-  color: #6c757d !important;
 }
 .page_copyright {
   font-size: 12px;
@@ -188,6 +184,5 @@ td {
   padding-bottom: 8px;
 }
 .buttons {
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 10px;
 }

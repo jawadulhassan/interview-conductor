@@ -23,10 +23,9 @@ const config = {
 
 function Info(props) {
   const onFinish = (values) => {
-    // $D-$M-$Y
     const { username, designation, date } = values;
-    const newDate = dayjs(date).format("DD-MM-YYYY");
-    const newValues = { username, designation, newDate };
+    const dateInfo = dayjs(date).format("DD-MM-YYYY");
+    const newValues = { username, designation, dateInfo };
     window.localStorage.setItem("interviewee-info", JSON.stringify(newValues));
     props.setSelectedTab("interview");
     console.log("Received values of form: ", newValues);
